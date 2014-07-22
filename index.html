@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Object-Oriented JavaScript Example</title>
+		<link rel = "stylesheet" href = "style.css">
+		<meta>
+	</head>
+
+	<body>
+		<article>
+			<header>
+				<h1>Object-oriented JavaScript</h1>
+				<address class="author">By <a rel="author" href="http://www.anthonyferlazzo.com">Anthony Ferlazzo</a></address>
+				on <time pubdate datetime="2014-07-14" title="July 6th, 2014"> 7/6/2014</time>
+			</header>
+
+			<p>
+				<img src="img/wonderWomanLogo.png" alt="Wonder Woman Logo">
+				There are many ways of organizing javascript code. One way is called
+				object-oriented because everything is centered around objects. But just as
+				Wonder Woman has special powers not found in mere mortals, these objects
+				have special properties and methods not found in primitive data types.
+			</p>
+			<p>
+				Think of the complex data types Array, Date, and String. Each have their own
+				properties and values not found with primitive data type variables in JavaScript.
+				You could say the variables created for object-oriented use have special powers.
+			</p>
+			<p>
+				The thing that trips up most people when it comes to learning about object-oriented
+				JavaScript is that the programming language doesn't come off-the-shelf with an
+				object-oriented vocabulary. No one thought to include these capabilities when
+				JavaScript was designed. But the language quickly evolved. Those that came before
+				us had to fashion these tools out of the primitive materials available at the time.
+			</p>
+			<p>
+				So while most programming languages have a special syntax for some object-oriented
+				features, JavaScript just uses sone of pre-existing objects baked right into
+				JavaScript. The first is the constructor function. Let's define this first
+				JavaScript object-oriented concept, a constructor function. The name of the
+				function is capitalized to help us remember its use as a "template" to construct
+				objects rather than as a garden-variety function.
+			</p>
+<pre>
+	function Kitten() {
+		this.name = "";
+		this.color = "";
+		this.gender = "";
+	}
+</pre>
+			<p>
+				Notice how this is similar to creating a plain object named Kitten.
+			</p>
+<pre>
+	var Kitten = {
+		name: "",
+		color: "",
+		gender: ""
+	}
+</pre>
+			<p>
+				The difference is you couldn't create instances of Kitten that would have unique
+				values in their properties.
+			</p>
+<pre>
+	var Kitten = {
+		name: "",
+		color: "",
+		gender: ""
+	}
+	var catOne = Kitten;
+	var catTwo = Kitten;
+
+	catOne.name = "Louie";
+	alert(catTwo.name + " is the same as " + catOne.name);
+</pre>
+			<p>Would result in</p>
+<pre>
+	Louie is the same as Louie
+</pre>
+			<p>
+				One last mystery to clear up. The prototype functions setName, setColor, setGender,
+				getName, getColor, getGender, and speak could have been defined within the
+				Kitten constructor function. The reason they were not is because if they were we'd
+				be redefining those methods within each instance of Kitten object, meaning every
+				time a new Kitten was instantiated. It is much better to define a method only once.
+			</p>
+
+			<p>my cat's name: <span id = "myCatsName"></span></p>
+			<p>my cat's color: <span id = "myCatsColor"></span></p>
+			<p>my cat's gender: <span id = "myCatsGender"></span></p>
+			<p>my cat's says: <span id = "myCatsSuperPower"></span></p>
+
+			<p>your cat's name: <span id = "yourCatsName"></span></p>
+			<p>your cat's color: <span id = "yourCatsColor"></span></p>
+			<p>your cat's gender: <span id = "yourCatsGender"></span></p>
+			<p>your cats says: <span id = "yourCatsSuperPower"></span></p>
+		</article>
+		<script src = "script.js"></script>
+	</body>
+</html>
